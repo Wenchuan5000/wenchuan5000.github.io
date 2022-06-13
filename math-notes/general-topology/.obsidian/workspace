@@ -1,0 +1,110 @@
+{
+  "main": {
+    "id": "446d11233b94e1e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "1236ebf417cd3995",
+        "type": "leaf",
+        "dimension": 20.0609756097561,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "_sidebar.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "4cbb699f4d234fbc",
+        "type": "leaf",
+        "dimension": 79.9390243902439,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "notes/bases.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0313f5e6d4d96539",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8cd52995a87e793",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c849b7d66cc9ba9b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "48184074c74d8cff",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 100
+  },
+  "right": {
+    "id": "3912d03129c0d069",
+    "type": "split",
+    "children": [
+      {
+        "id": "b05def4e2bebd4dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d23930d75ad7c0e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/bases.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4cbb699f4d234fbc",
+  "lastOpenFiles": [
+    "notes/bases.md",
+    "_sidebar.md",
+    "notes/topological-spaces.md"
+  ]
+}
