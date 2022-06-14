@@ -1,0 +1,149 @@
+\usepackage[toc,page]{appendix}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm} %proof
+\usepackage{amssymb} %subsetneq
+\usepackage{amsmath} %aligned
+\usepackage{enumerate}
+\usepackage{mathrsfs} %for `\mathscr`
+
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{layouts}
+%textwidth in cm: \printinunitsof{pt}\prntlen{\textwidth}
+
+
+\newtheoremstyle{wenchuan}
+	{1.25em} % Space above
+	{1.25em} % Space below
+	{} % Body font
+	{} % Indent amount
+	{\bfseries} % Theorem head font
+	{.} % Punctuation after theorem head
+	{0.5em} % Space after theorem head
+	{} % Theorem head spec (can be left empty, meaning `normal')
+
+
+%\theoremstyle{definition}
+
+\theoremstyle{wenchuan}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{observation}{Observation}[section]
+\newtheorem{problem}{Problem}[section]
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\newtheorem{example}{Example}[section]
+\newtheorem{note}{Note}[section]
+
+
+%\renewenvironment{proof}{{\bfseries Proof.}}{}
+
+
+\newcommand{\qedlm}{\hfill \ensuremath{\Box}}
+\renewcommand{\qed}{\hfill \ensuremath{\blacksquare}}
+
+\renewcommand{\baselinestretch}{1.25}
+
+
+% Colors
+%================================================
+%::::::::::::::::::::::::::::::::::::::::::::::::
+
+\usepackage{hyperref}
+
+%------------------------------------------------
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=black,
+}
+
+%------------------------------------------------
+
+%::::::::::::::::::::::::::::::::::::::::::::::::
+%================================================
+
+
+
+% Colors
+%================================================
+%::::::::::::::::::::::::::::::::::::::::::::::::
+
+\usepackage{xcolor}
+
+%------------------------------------------------
+
+\definecolor{red}{HTML}{DF384F}
+\definecolor{blue}{HTML}{0940DE}
+
+%------------------------------------------------
+
+%::::::::::::::::::::::::::::::::::::::::::::::::
+%================================================
+
+
+
+% Title Formatting
+%================================================
+%::::::::::::::::::::::::::::::::::::::::::::::::
+
+\usepackage{titlesec}
+
+%------------------------------------------------
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{\centering Chapter \ \thechapter.} % label
+{0ex} % sep
+{
+%    \rule{\textwidth}{1pt}\vspace{1ex}
+%    \vspace{1ex}
+	\huge
+    \centering
+} % before-code
+[
+%\vspace{-0.3ex}%
+%\rule{\textwidth}{0.3pt}
+] % after-code
+%------------------------------------------------
+
+\titleformat
+{\section}
+[display]
+{\bfseries\large}
+{} % label
+{0ex} % sep
+{
+	\S \thesection \ \
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}\vspace{2ex}
+] % after-code
+
+%::::::::::::::::::::::::::::::::::::::::::::::::
+%================================================
+
+
+
+% Footnote
+%================================================
+%::::::::::::::::::::::::::::::::::::::::::::::::
+\renewcommand{\footnoterule}{
+  \kern 2ex
+  \hrule width 160pt height 0.3pt
+  \kern 2ex
+}
+%::::::::::::::::::::::::::::::::::::::::::::::::
+%================================================

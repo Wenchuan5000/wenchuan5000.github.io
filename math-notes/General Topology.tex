@@ -1,0 +1,130 @@
+\documentclass{report}
+
+\title{Notes for General Topology}
+\author{Wenchuan Zhao}
+\input{head/head.tex}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%========================================
+%########################################
+%----------------------------------------
+
+
+
+\chapter{Topological Space}
+%========================================
+
+\section{Basic Ideas}
+%----------------------------------------
+
+
+\begin{definition}
+	\label{def: topology}
+	
+	Let $X$ be any set.
+	
+	A collection $\mathcal T \subseteq \mathcal P(X)$ is a \textit{topology} for $X$ iff it satisfies the \textit{open set axioms}:
+	\begin{enumerate}
+		\item
+		$X \in \mathcal T$;
+		
+		\item
+		$\mathcal T$ is closed under arbitrary union; explicitly,
+		$$
+		\forall \mathcal A \subseteq \mathcal T: \bigcup \mathcal A \in \mathcal T;
+		$$
+		
+		\item
+		$\mathcal T$ is closed under finite intersection; explicitly,
+		$$
+		\forall \mathcal B \subseteq \mathcal T : |\mathcal B| \in \mathbb N : \bigcap \mathcal B \in \mathcal T.
+		$$
+		
+		The ordered pair $(X, \mathcal T)$ is a \textit{topological space} iff $\mathcal T$ is a topology for $X$.
+		
+		A subset $U \subseteq X$ is an \textit{open set} of $(X, \mathcal T)$, or an \textit{open subset} of $X$, iff $U \in \mathcal T$.
+	\end{enumerate}
+\end{definition}
+
+
+\begin{note}
+	Even if $\mathcal T$ is an infinite	topology on an infinite set $X$, $\mathcal T$ is not needed to be closed under infinite intersection. For example, let $\mathcal T$
+	$$
+	\mathcal T = \left\{ [0,r): r \in \mathbb R \right\}.
+	$$
+	then $\mathcal T$ is a topology for $\mathbb R_{\ge 0}$. The collection
+	$$
+	\left\{ \left[ 0, \frac{1}{i} \right) \right\}_{i \in \mathbb Z_{> 0}}
+	$$
+	is a subset of $\mathcal T$, but its intersection is $\{0\} \notin \mathcal T$.
+\end{note}
+
+
+
+\begin{lemma}
+	\label{lm: emptyset is in topology}
+	
+	Let $(X, \mathcal T)$ be a topological space.
+	
+	Then, $\emptyset \in \mathcal T$.
+\end{lemma}
+
+
+\begin{proof}
+	As $\emptyset$ is a subset of any set, $\emptyset \subseteq \mathcal T$. By the open set axiom 2, we have
+	$$
+	\emptyset = \bigcup \emptyset \in \mathcal T.
+	$$
+\end{proof}
+
+
+\begin{definition}
+	Let $X$ be any set, and let $\mathcal T_1$ and $\mathcal T_2$ be topologies on $X$.
+	
+	$\mathcal T_1$ is said to be \textit{finer} than $\mathcal T_2$, or $\mathcal T_2$ is said to be \textit{coarser} than $\mathcal T_1$ iff $\mathcal T_2 \subseteq \mathcal T_1$.
+\end{definition}
+
+
+\begin{example}
+	For any set $X$, the power set $\mathcal P(X)$ can be considered as a topology for $X$, called \textit{discrete topology}. It is the \textit{finest topology} on $X$.
+\end{example}
+
+\begin{example}
+	For any set $X$, the collection $\{\emptyset, X\}$ is a topology for $X$. It is called \textit{indiscrete topology}, or \textit{trivial topology}, which is the coarsest topology on $X$.
+\end{example}
+
+
+\section{Bases for Topologies}
+%----------------------------------------
+
+
+\begin{definition}
+	Let $(X, \mathcal T)$ be a topological space.
+	
+	A collection $\mathcal B \subseteq \mathcal T$ is an \textit{analytic basis} for $\mathcal T$ iff for any $U \in \mathcal T$, there is a $\mathcal S \subseteq \mathcal B$, such that
+	$$
+	U = \bigcup \mathcal S.
+	$$
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------
+%########################################
+%========================================
+\end{document}
