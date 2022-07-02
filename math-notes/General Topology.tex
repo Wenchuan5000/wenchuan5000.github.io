@@ -23,74 +23,199 @@
 %----------------------------------------
 
 
-How do we measure the distance between two points in the space? Well, in the intuitive world, Pythagoras theorem might be the most popular way to do so.
-
-Take the 2-dimensional Euclidean vector space $\mathbb R^2$ for example -- Here we use the $xy$-plane. For any vector $\mathbf a, \mathbf b \in \mathbb R^2$, their distance is defined as the length of segment with $\mathbf a$ and $\mathbf b$ as the end points. So, by Pythagoras theorem, it is by this formula:
+How do we measure the distance between two points in a space? Take $\mathbb R^3$ for example, for any points $x, y \in \mathbb R^3$, the distance between $x$ and $y$ is usually means the length of the segments with $x$ and $y$ as its endpoints, which is given by
 $$
-\rho(\mathbf a, \mathbf b) = \sqrt{(a_x - b_x)^2 + (a_y - b_y)^2}.
+\rho(x, y) = \left( \sum_{i = 1}^3 |x_i - y_i|^2 \right)^\frac{1}{2},
 $$
-
-Here, we consider $\rho$ as an operation defined on $\mathbb R^2 \times \mathbb R^2$, called metric function, and its outputs are real numbers:
-$$
-\rho: \mathbb R^2 \times \mathbb R^2 \to \mathbb R.
-$$
-
-In this case, $\rho$ satisfies 4 conditions: (let me write down the precondition first) for any $\mathbf a, \mathbf b, \mathbf c \in \mathbb R^2$
+where for any $p \in \mathbb R^3$, $p_i$ denotes the $i$-th component of $p$. Here, we consider $\rho$ as a function from $\mathbb R^3 \times \mathbb R^3$ to $\mathbb R$, called \textit{Euclidean metric function} on $\mathbb R^3$. Then, $\rho$ satisfies the following conditions: For any $x$, $y$, and $z \in \mathbb R^3$,
 \begin{enumerate}
-	\item $\rho(\mathbf a, \mathbf b) \ge 0$. Obviously, there is no negative distance.
-	\item $\rho(\mathbf a, \mathbf b) = 0 \iff \mathbf a = \mathbf b$. That is, the distance between two points is zero if and only if they coincides.
-	\item $\rho(\mathbf a, \mathbf b) = \rho(\mathbf b, \mathbf a)$. That is obvious, because a segment $\mathbf a \mathbf b$ is actually the same as $\mathbf b \mathbf a$.
-	\item $\rho(\mathbf a, \mathbf b) + \rho(\mathbf b, \mathbf c) \ge \rho(\mathbf a, \mathbf c)$. We call this property the triangle inequality. It is a quite geometrical name, because if $\mathbf a, \mathbf b$ and $\mathbf c$ form a triangle, then the sum of the length of any two sides of the triangle can't be less than the length of the third one.
+	\item $\rho(x, y) = 0$ if and only if $x = y$;
+	\item $\rho(x, y) = \rho(y, x)$;
+	\item $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$; this property is also called \textit{triangle inequality}.
 \end{enumerate}
 
-So, in this case, we call the order pair $(\mathbb R^2, \rho)$ the 2-dimensional Euclidean metric space.
+In this case, we call the ordered pair $(\mathbb R^3, \rho)$ the \textit{$3$-dimensional Eulidean metric space}.
 
-But, just like how we define the mass of 1 kg in Physics, the metric function $\rho$ here is not so naturally given as what we might keep in mind.
+Just like how the first scientist defined the unite of 1 kilogram, a metric function is not entirely naturally given, but is chosen depend on what distance we need to find. In the example above, the set $\mathbb R^3$ can be replaced by any set $X$, and the metric function $\rho$ can be any operation from $X \times X \to \mathbb R$ satisfying the 3 conditions above. And this is how metric spaces are defined.
 
-In mathematics, the set here can be any set $X$. It can be $\mathbb R^n$, a collection of some sets, or a of some functions.
+\begin{definition}
+	Let $X$ be any set. A mapping $\rho: X \times X \to \mathbb R$ is a \textit{metric} on $X$ if and only if it satisfies the \textit{metric axioms}. That is, for any $\mathbf x, \mathbf y, \mathbf z \in X$,
+	\begin{enumerate}[(M1)]
+		\item $\rho(x, y) = 0$ if and only if $x = y$;
+		\item $\rho(x, y) = 0$ if and only if $x = y$;
+		\item $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$.
+	\end{enumerate}
+	
+	An ordered pair $(X, \rho)$ is a \textit{metric space} if and only if $\rho$ is a metric on $X$.
+\end{definition}
 
-And the metric function $\rho$ here can be any operation defined on $X \times X$, if it satisfies these conditions.
+Some author also consider $\rho(x, y) \ge 0$ as an axiom in the list above, but, rigorously, it is a property deduced by the 3 axioms. By metric axiom M3, we have
+$$
+\rho(x, y) + \rho(y, x) \ge \rho (x, x).
+$$
+By M2, we have
+$$
+\rho(x, y) + \rho(x,y) \ge \rho(x, x).
+$$
+By M1, we have
+$$
+2\rho (x,y) \ge 0.
+$$
+Thus,
+$$
+\rho(x,y) \ge 0.
+$$
 
-So, here we came up with the definition of metric spaces.
+So, if we are going to prove if an operation is a metric, this is an unnecessary progress.
 
 
 \begin{definition}
-	
+	Let $(X, \rho)$ be a metric space, let $x \in X$, and let $\delta \in \mathbb R_{> 0}$.
+
+	The \textit{open $\delta$-ball}, or simply \textit{$\delta$-ball}, of $x$ is defined as the set
+	$$
+	B(x, \delta) = \left\{ y \in X: \rho(x,y) < \delta \right\}.
+	$$
 \end{definition}
 
 
+The “shape” of an open ball is determined by the metric and the set. In the 3-dimensional Euclidean metric space $(\mathbb R^3, \rho)$, for example, an open $\delta$-ball of $x$ is a sphere with $x$ as its center and $\delta$ as its radius. But if $\rho$ is a \textit{taxicap metric} on $\mathbb R^3$, i.e.,
+$$
+\rho(x,y) = |x_1 - y_1| + |x_2 - y_2| + |x_3 - y_3|,
+$$
+then, an open $\delta$-ball of $x$ is no longer a sphere, but a box with $x$ as its center and $2\delta$ as the length of it edges.
+
+If $<$ is replaced by $\le$ in the definition, then we have the definition blew.
 
 
+\begin{definition}
+	Let $(X, \rho)$ be a metric space, let $x \in X$, and let $\delta \in \mathbb R_{> 0}$.
+	
+	The \textit{closed $\delta$-ball} of $x$ is defined as the set
+	$$
+	\overline B(x, \delta) = \left\{ y \in X: \rho(x,y) \le \delta \right\}.
+	$$
+\end{definition}
 
-\section{Bases of Sets}
+
+Note that, in the both definitions above, we have the condition $y \in X$. This means, open (closed) balls are always subsets of $X$. For example, let
+$$
+X = [0 , 1] \times [0,1],
+$$
+and let $\rho$ be an Euclidean metric on $X$. In this case, $B(0,1)$ is not a disk, but disk sector.
+
+
+\section{Some Examples on Metric Spaces}
 %----------------------------------------
 
 
-\begin{definition}
-	\label{def: bases of sets}
-	Let $X$ be a set, and let $\mathcal B \subseteq \mathcal P(X)$.
+\begin{example}
+	Some metrics do not care about the any geometrical length. For example, let $\rho: \mathbb R_{> 0} \times \mathbb R_{> 0} \to \mathbb R$ be defined as
+	$$
+	\rho(x,y) =
+	\begin{cases}
+	\displaystyle \frac{x}{y} - 1 &: x \ge y; \\
+	\displaystyle \frac{y}{x} - 1 &: x < y,
+	\end{cases}
+	$$
+	then $\rho$ is a metric on $\mathbb R_{> 0}$ only cares about the ratio between any two points in the space.
 	
-	$\mathcal B$ is a \textit{basis} of $X$ iff
-	\begin{enumerate}
-		\item 
-		$\mathcal B$ is a cover of $X$, i.e., $X \subseteq \bigcup \mathcal B$; and
-		
-		\item
-		For any $B_1, B_2 \in \mathcal B$, there exists a $\mathcal A \subseteq \mathcal B$, such that $B_1 \cap B_2 = \bigcup \mathcal A$.
-	\end{enumerate}
-\end{definition}
+	There is another metric on $\mathbb R_{> 0}$ which is quite similar. Let $\rho: \mathbb R_{> 0} \times \mathbb R_{> 0} \to \mathbb R_{\ge 0}$ be defined as
+	$$
+	\rho(x,y) = \left|\log \left( \frac{x}{y} \right) \right|,
+	$$
+	then $\rho$ is a metric on $\mathbb R_{> 0}$, and it can be proved by the properties of logarithm functions.
+\end{example}
 
 
-\begin{note}
-	Some authors also call bases of sets \textit{synthetics sets}.
-\end{note}
+\begin{example}
+	The \text{discrete metric} $\rho$ on $X$ only cares about if any two points $x$ and $y$ in $X$ coincide or not. That is,
+	$$
+	\rho(x,y) =
+	\begin{cases}
+	1 &: x \ne y; \\
+	0 &: \text{else}.
+	\end{cases}
+	$$
+\end{example}
+
+
+\begin{example}
+	The 3-dimensional Euclidean metric space is one of $p$-product metric spaces. Let
+	$$
+	X = \prod_{i = 1}^n X_i.
+	$$
+	Then, for any $p \in \mathbb R_{\ge 1}$, the $p$-product metric $\rho_p: \mathbb R^n \times \mathbb R^n \to \mathbb R$ is defined as
+	$$
+	\rho_p(x, y) = \left( \sum_{i = 1}^n \rho_i^p(x_i, y_i) \right)^\frac{1}{p},
+	$$
+	where $\rho_i(x_i, y_i)$ can be the Euclidean metric on $X_i$ for any $i \in \{1, \ldots, n\}$, but it is not required. Indeed, $p$-product metric spaces are metric space. It is easy to show that $\rho_p$ satisfies the metric axiom 1 and 2. Now, we prove that the $\rho_p$ satisfies the metric axiom 3. That is to show that
+	$$
+	\left( \sum_{i = 1}^n \rho_i(x_i, z_i)^p \right)^\frac{1}{p} \le \left( \sum_{i = 1}^n \rho_i(x_i, y_i)^p \right)^\frac{1}{p} + \left( \sum_{i = 1}^n \rho_i(y_i, z_i)^p \right)^\frac{1}{p}
+	$$
+	for any $x,y,z \in X$.
+	
+	\begin{proof}
+		By Minkowski's inequality,
+		$$
+		\left( \sum_{i = 1}^n (\rho_i (x_i, y_i) + \rho_i(y_i, z_i))^p \right)^\frac{1}{p} \le \left( \sum_{i = 1}^n \rho_i(x_i, y_i)^p \right)^\frac{1}{p} + \left( \sum_{i = 1}^n \rho_i(y_i, z_i)^p \right)^\frac{1}{p}.
+		$$
+		As for any $i$, $\rho_i$ is a metric on $X_i$. So $\rho_i$ satisfies the open axiom 3. Thus,
+		$$
+		\left( \sum_{i = 1}^n \rho_i(x_i, z_i)^p \right)^\frac{1}{p} \le \left( \sum_{i = 1}^n (\rho_i (x_i, y_i) + \rho_i(y_i, z_i))^p \right)^\frac{1}{p}.
+		$$
+		That is,
+		$$
+		\rho(x, z) \le \rho(x,y) + \rho(y,z),
+		$$
+		which is precisely the metric axiom 3.
+	\end{proof}
+\end{example}
+
+
+
+\begin{example}
+	Let $M$ be a set of all bounded functions $S \to (T, \rho_T)$, where $\rho_T$ is a metric on $T$. Here, we treat all of these functions as points in $M$. Let $\rho: M \times M \to \mathbb R$ be defined as
+	$$
+	\rho(f,g) = \sup_{x \in S} \rho_T(f(x), g(x)),
+	$$
+	Then $\rho$ is a metric on $M$. It is actually easy to prove that $\rho$ is indeed a metric on $M$. Take the metric axiom 3 for example.
+	
+	\begin{proof}
+		Let $f, g, h \in M$, then we have
+		$$
+		\begin{aligned}
+		\rho(f, g) + \rho(g, h) &= \sup_{x \in S} \rho_T(f(x), g(x)) + \sup_{x \in S} \rho_T (g(x), h(x)) \\
+		&= \sup_{x \in S} \left( \rho_T (f(x), g(x)) + \rho_T (g(x), h(x)) \right).
+		\end{aligned}
+		$$
+		As $\rho_T$ satisfies the metric axiom 3, we have
+		$$
+		\ldots \ge \sup_{x \in S} \rho(f(x), h(x)) = \rho(f,h).
+		$$
+	\end{proof}
+\end{example}
+
+
+\begin{example}
+	Let $(M, \rho)$ be a metric space. Let $\rho_H: \mathcal P(M) \setminus \{\emptyset\} \to \mathbb R$ be defined as
+	$$
+	\rho_H(X, Y) = \max \left\{ \sup_{x \in X} \rho(x, Y), \sup_{y \in Y} \rho (y, X) \right\},
+	$$
+	where
+	$$
+	\rho_H(a, B) = \inf_{b \in B} \rho(a,b).
+	$$
+	
+	$\rho_H$ is called \textit{Hausdorff metric}. It measures how two subsets $X$ and $Y$ of $M$ are similar.
+\end{example}
 
 
 
 \section{Topological Spaces}
 %----------------------------------------
 
-
+There are actually at least two ways to define topological spaces: by open set axioms or by bases of sets. The definition by open set axioms might be the more popular one.
 
 \begin{definition}
 	\label{def: topology}
@@ -105,13 +230,13 @@ So, here we came up with the definition of metric spaces.
 		\item
 		$\mathcal T$ is closed under arbitrary union; explicitly,
 		$$
-		\forall \mathcal A \subseteq \mathcal T: \bigcup \mathcal A \in \mathcal T;
+		\forall \mathcal U \subseteq \mathcal T: \bigcup \mathcal U \in \mathcal T;
 		$$
 		
 		\item
 		$\mathcal T$ is closed under finite intersection; explicitly,
 		$$
-		\forall \mathcal B \subseteq \mathcal T : |\mathcal B| \in \mathbb N : \bigcap \mathcal B \in \mathcal T.
+		\forall \mathcal F \subseteq \mathcal T : |\mathcal F| \in \mathbb N : \bigcap \mathcal F \in \mathcal T.
 		$$
 	\end{enumerate}
 	
@@ -121,17 +246,78 @@ So, here we came up with the definition of metric spaces.
 \end{definition}
 
 
-\begin{note}
-	Even if $\mathcal T$ is an infinite	topology on an infinite set $X$, $\mathcal T$ is not needed to be closed under infinite intersection. For example, let $\mathcal T$
+Another way to define topological spaces is to consider any topological space as a collection \textit{generated} by a basis of the given set. Given any set $X$, a basis $\mathcal B$ of $X$ is a cover of $X$, where for any $A, B \in \mathcal B$, $A \cap B$ can be considered as the union of an $\mathcal S \subseteq \mathcal B$; i.e.,
+$$
+A \cap B = \bigcup \mathcal S.
+$$
+
+For example, if $(X, \rho)$ is a metric space, then the set of all open balls in $(X, \rho)$ is a basis of $X$.
+
+\begin{lemma}
+	Let $X$ be any set, and let $\mathcal T \subseteq \mathcal P(X)$.
+	
+	Then, $\mathcal T$ is a topology for $X$ if and only if there exists a basis $\mathcal B$ of $X$ such that
 	$$
-	\mathcal T = \left\{ [0,r): r \in \mathbb R \right\}.
+	\mathcal T = \left\{ \bigcup \mathcal A: \mathcal A \subseteq \mathcal B \right\}.
 	$$
-	then $\mathcal T$ is a topology for $\mathbb R_{\ge 0}$. The collection
-	$$
-	\left\{ \left[ 0, \frac{1}{i} \right) \right\}_{i \in \mathbb Z_{> 0}}
-	$$
-	is a subset of $\mathcal T$, but its intersection is $\{0\} \notin \mathcal T$.
-\end{note}
+	
+	\begin{proof}
+		Assume $\mathcal T$ is a topology for $X$, then $\mathcal T$ itself is a basis of $X$. (Why?) Then, $\mathcal T \subseteq \left\{ \bigcup \mathcal A : \mathcal A \subseteq \mathcal T \right\}$. But, As $\mathcal T$ satisfies the open axiom 2, for any $\mathcal A \subseteq \mathcal T$, $\bigcup \mathcal A \in \mathcal T$, thus $\mathcal T \supseteq \left\{ \bigcup \mathcal A : \mathcal A \subseteq \mathcal T \right\}$.
+		Thus, $\mathcal T = \left\{ \bigcup \mathcal A : \mathcal A \supseteq \mathcal T \right\}$.
+		\qedlm
+		
+		On the other hand, assume there is a basis $\mathcal B$ of $X$ such that $\mathcal T = \left\{ \bigcup \mathcal A: \mathcal A \subseteq \mathcal B \right\}$.
+		
+		As $\mathcal B$ is a cover of $X$ and $\mathcal B \subseteq \mathcal B$, we have $X = \bigcup \mathcal B \in \mathcal T$. So $\mathcal T$ satisfies the open set axiom O1.
+		
+		Let $\mathcal U \subseteq \mathcal T$. For any $U \in \mathcal U$, let $\mathcal A_U \subseteq \mathcal B$ such that $U = \bigcup \mathcal A_U$. Thus
+		$$
+		\begin{aligned}
+			\bigcup \mathcal U &= \bigcup_{U \in \mathcal U} \left( \bigcup \mathcal A_U \right) = \bigcup \left( \bigcup_{U \in \mathcal U} \mathcal A_U \right).
+		\end{aligned}
+		$$
+		The union in the bracket is a subset of $\mathcal B$, so $\bigcup \mathcal U \in \mathcal T$. Thus, open set axiom 2 is satisfied.
+		
+		Let $U, V \in \mathcal T$. Then there exist $\mathcal U, \mathcal V \subseteq \mathcal B$ such that $U = \bigcup \mathcal U$ and $V = \bigcup \mathcal V$. Then, we have
+		$$
+		\begin{aligned}
+			A \cap B &= \bigcup \mathcal U \cap \bigcup \mathcal V \\
+			&= \bigcup_{U \in \mathcal U} \left( U \cap \bigcup \mathcal V \right) \\
+			&= \bigcup_{U \in \mathcal U} \left( \bigcup_{V \in \mathcal V} (U \cap V) \right).
+		\end{aligned}
+		$$
+		
+		As $\mathcal B$ is a basis of $X$, there exists for any $U, V \in \mathcal B$, there exists a $\mathcal O_{(U,V)} \subseteq \mathcal B$, such that
+		$$
+		U \cap V = \bigcup \mathcal O_{(U, V)}.
+		$$
+		Thus, we have
+		$$
+		\begin{aligned}
+			A \cap B &= \bigcup_{(U, V) \in \mathcal U \times \mathcal V} \left( \bigcup \mathcal O_{(U, V)} \right) \\
+			&= \bigcup \left( \bigcup_{(U, V) \in \mathcal U \times \mathcal V} \mathcal O_{(U, V)} \right).
+		\end{aligned}
+		$$
+		
+		The union in the bracket is a subset of $\mathcal B$, thus $A \cap B \in \mathcal T$. Then, the open set axiom 3 is satisfied.
+	\end{proof}
+\end{lemma}
+
+For any set $X$, we say that a topology $\mathcal T$ for $X$ is \textit{generated} by a basis $\mathcal B$ of $X$ if and only if $\mathcal T$ can be considered as $\{\bigcup \mathcal A: \mathcal A \subseteq \mathcal B\}$.
+
+
+====
+
+
+Even if $\mathcal T$ is an infinite	topology on an infinite set $X$, $\mathcal T$ is not needed to be closed under infinite intersection. For example, let $\mathcal T$
+$$
+\mathcal T = \left\{ [0,r): r \in \mathbb R \right\}.
+$$
+then $\mathcal T$ is a topology for $\mathbb R_{\ge 0}$. The collection
+$$
+\left\{ \left[ 0, \frac{1}{i} \right) \right\}_{i \in \mathbb Z_{> 0}}
+$$
+is a subset of $\mathcal T$, but its intersection is $\{0\} \notin \mathcal T$.
 
 
 
