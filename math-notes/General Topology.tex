@@ -1,6 +1,6 @@
 \documentclass{report}
 
-\title{Notes for General Topology}
+\title{Notes on General Topology}
 \author{Wenchuan Zhao}
 \input{head/head.tex}
 
@@ -15,11 +15,81 @@
 
 
 
-\chapter{Topological Space}
+\chapter{Topological Spaces}
 %========================================
 
-\section{Basic Ideas}
+
+\section{Metric Spaces}
 %----------------------------------------
+
+
+How do we measure the distance between two points in the space? Well, in the intuitive world, Pythagoras theorem might be the most popular way to do so.
+
+Take the 2-dimensional Euclidean vector space $\mathbb R^2$ for example -- Here we use the $xy$-plane. For any vector $\mathbf a, \mathbf b \in \mathbb R^2$, their distance is defined as the length of segment with $\mathbf a$ and $\mathbf b$ as the end points. So, by Pythagoras theorem, it is by this formula:
+$$
+\rho(\mathbf a, \mathbf b) = \sqrt{(a_x - b_x)^2 + (a_y - b_y)^2}.
+$$
+
+Here, we consider $\rho$ as an operation defined on $\mathbb R^2 \times \mathbb R^2$, called metric function, and its outputs are real numbers:
+$$
+\rho: \mathbb R^2 \times \mathbb R^2 \to \mathbb R.
+$$
+
+In this case, $\rho$ satisfies 4 conditions: (let me write down the precondition first) for any $\mathbf a, \mathbf b, \mathbf c \in \mathbb R^2$
+\begin{enumerate}
+	\item $\rho(\mathbf a, \mathbf b) \ge 0$. Obviously, there is no negative distance.
+	\item $\rho(\mathbf a, \mathbf b) = 0 \iff \mathbf a = \mathbf b$. That is, the distance between two points is zero if and only if they coincides.
+	\item $\rho(\mathbf a, \mathbf b) = \rho(\mathbf b, \mathbf a)$. That is obvious, because a segment $\mathbf a \mathbf b$ is actually the same as $\mathbf b \mathbf a$.
+	\item $\rho(\mathbf a, \mathbf b) + \rho(\mathbf b, \mathbf c) \ge \rho(\mathbf a, \mathbf c)$. We call this property the triangle inequality. It is a quite geometrical name, because if $\mathbf a, \mathbf b$ and $\mathbf c$ form a triangle, then the sum of the length of any two sides of the triangle can't be less than the length of the third one.
+\end{enumerate}
+
+So, in this case, we call the order pair $(\mathbb R^2, \rho)$ the 2-dimensional Euclidean metric space.
+
+But, just like how we define the mass of 1 kg in Physics, the metric function $\rho$ here is not so naturally given as what we might keep in mind.
+
+In mathematics, the set here can be any set $X$. It can be $\mathbb R^n$, a collection of some sets, or a of some functions.
+
+And the metric function $\rho$ here can be any operation defined on $X \times X$, if it satisfies these conditions.
+
+So, here we came up with the definition of metric spaces.
+
+
+\begin{definition}
+	
+\end{definition}
+
+
+
+
+
+\section{Bases of Sets}
+%----------------------------------------
+
+
+\begin{definition}
+	\label{def: bases of sets}
+	Let $X$ be a set, and let $\mathcal B \subseteq \mathcal P(X)$.
+	
+	$\mathcal B$ is a \textit{basis} of $X$ iff
+	\begin{enumerate}
+		\item 
+		$\mathcal B$ is a cover of $X$, i.e., $X \subseteq \bigcup \mathcal B$; and
+		
+		\item
+		For any $B_1, B_2 \in \mathcal B$, there exists a $\mathcal A \subseteq \mathcal B$, such that $B_1 \cap B_2 = \bigcup \mathcal A$.
+	\end{enumerate}
+\end{definition}
+
+
+\begin{note}
+	Some authors also call bases of sets \textit{synthetics sets}.
+\end{note}
+
+
+
+\section{Topological Spaces}
+%----------------------------------------
+
 
 
 \begin{definition}
@@ -28,7 +98,7 @@
 	Let $X$ be any set.
 	
 	A collection $\mathcal T \subseteq \mathcal P(X)$ is a \textit{topology} for $X$ iff it satisfies the \textit{open set axioms}:
-	\begin{enumerate}
+	\begin{enumerate}[(O1):]
 		\item
 		$X \in \mathcal T$;
 		
@@ -43,11 +113,11 @@
 		$$
 		\forall \mathcal B \subseteq \mathcal T : |\mathcal B| \in \mathbb N : \bigcap \mathcal B \in \mathcal T.
 		$$
-		
-		The ordered pair $(X, \mathcal T)$ is a \textit{topological space} iff $\mathcal T$ is a topology for $X$.
-		
-		A subset $U \subseteq X$ is an \textit{open set} of $(X, \mathcal T)$, or an \textit{open subset} of $X$, iff $U \in \mathcal T$.
 	\end{enumerate}
+	
+	The ordered pair $(X, \mathcal T)$ is a \textit{topological space} iff $\mathcal T$ is a topology for $X$.
+		
+	A subset $U \subseteq X$ is an \textit{open set} of $(X, \mathcal T)$, or an \textit{open subset} of $X$, iff $U \in \mathcal T$.
 \end{definition}
 
 
@@ -82,6 +152,15 @@
 \end{proof}
 
 
+\begin{example}
+	Let $X = \{1, 2, 3\}$, and let
+	$$
+	\mathcal B = \{\{1,2\}, \{2, 3\}, \{2\}\},
+	$$
+	and let $\mathcal T = \{\bigcup \mathcal A: \mathcal A \subseteq \mathcal B\}$, then $\mathcal T$ is a topology for $X$.
+\end{example}
+
+
 \begin{definition}
 	Let $X$ be any set, and let $\mathcal T_1$ and $\mathcal T_2$ be topologies on $X$.
 	
@@ -98,6 +177,99 @@
 \end{example}
 
 
+\section{Interiors and Closures}
+%----------------------------------------
+
+
+\begin{definition}
+	Let $(X, \mathcal T)$ be a topological space, and let $U \subseteq X$.
+	
+	The \textit{interior} of $A$, denoted $A^\circ$ or $\mathrm{int} (A)$, in $(X, \mathcal T)$ is defined as the union of all open sets contained in $A$. Explicitly, $\mathrm{int}_X$ can be considered as a mapping from $\mathcal P(X)$ to $\mathcal P(X)$, defined as
+	$$
+	\mathrm{int}_X(A) := \bigcup (\mathcal P(A) \cap \mathcal T).
+	$$
+\end{definition}
+
+
+\begin{note}
+	Finding the interior of a subset requires the definition of the topology for the set. I mean, even for the same set $X$ and the same subset $A \subseteq X$, if there are two different topologies $\mathcal T_1$ and $\mathcal T_2$ for $X$, the interior of $A$ in $(X, \mathcal T_1)$ and $(X, \mathcal T_2)$ might be different. For example, in $\mathbb R$, let $\mathcal T_1$ be indiscrete topology for $\mathbb R$, and let $\mathcal T_2$ be the Euclidean topology for $\mathbb R$, then,
+	$$
+	\mathrm{int}_{\mathcal T_1} ([0,1)) = \emptyset, \text{ and } \mathrm{int}_{\mathcal T_2}([0,1)) = (0,1),
+	$$
+	where $\mathrm{int}_{\mathcal T_1}(\cdot)$ and $\mathrm{int}_{\mathcal T_2}(\cdot)$ denotes the interior mapping for $(X, \mathcal T_1)$ and $(X, \mathcal T_2)$ respectively.
+\end{note}
+
+
+\begin{note}
+	By the definition, it is clear that for any topology $(X, \mathcal T)$ and for any $A \subseteq X$, $\mathrm{int}(A) \in \mathcal T$.
+\end{note}
+
+
+\begin{lemma}
+	Let $(X, \mathcal T)$ be a topological space, let $A \subseteq X$, and let $U \in \mathcal T$.
+	
+	Then, $U \subseteq A$ if and only if $U \subseteq \mathrm{int}(A)$.
+	
+	\begin{proof}
+		As $U \in \mathcal P(A)$ and $U \in \mathcal T$, $U \in \mathcal P(A) \cap \mathcal T$. Thus,
+		$$
+		U \subseteq \bigcup \mathcal (\mathcal P(A) \cap \mathcal T) = \mathrm{int}(A).
+		$$
+		\qedlm
+		
+		Conversely, as $\mathrm{int}(A) \subseteq A$, as $U \subseteq \mathrm{int}(A)$, $U \subseteq A$.
+	\end{proof}
+\end{lemma}
+
+
+\begin{lemma}
+	Let $(X, \mathcal T)$ be a topological space, and let $A \subseteq X$.
+	
+	$\mathrm{int}(A) = A$ if and only if $A \in \mathcal T$.
+	
+	\begin{proof}	
+		If $\mathrm{int}(A) = A$, then $A = \bigcup (\mathcal P (A) \cap\mathcal T)$. As $\mathcal P(A) \cap \mathcal T \subseteq \mathcal T$, this union is an element of $\mathcal T$.
+		\qedlm
+		
+		Conversely, as $A \in \mathcal P(A)$ and $A \in \mathcal T$, $A \in \mathcal P(A) \cap \mathcal T$. For any $U \in \mathcal P(A)$, $U \subseteq A$. Then, we have $A \supseteq \bigcup (\mathcal P(A) \cap \mathcal T)$; and as $A \subseteq \bigcup (\mathcal P(A) \cap \mathcal T)$, we have
+		$$
+		A = \bigcup (\mathcal P(A) \cap \mathcal T) = \mathrm{int}(A).
+		$$
+	\end{proof}
+\end{lemma}
+
+
+\begin{lemma}
+	Let $(X, \mathcal T)$ be a topological space, and let $A, B \subseteq X$.
+	
+	Then,
+	$$
+	\mathrm{int}(A \cap B) = \mathrm{int}(A) \cap \mathrm{int}(B).
+	$$
+	
+	\begin{proof}
+		Let $U \subseteq \mathrm{int}(A \cap B)$. Then,
+		$$
+		\begin{aligned}
+			U \subseteq \mathrm{int}(A \cap B) = \bigcup (\mathcal P(A \cap \mathcal B) \cap \mathcal T).
+		\end{aligned}
+		$$
+		
+		Note that $\mathcal P(A \cap B) = \mathcal P(A) \cap \mathcal P(B)$, so $U \in \mathcal P(A \cap B) \cap \mathcal T$ iff $U \in \mathcal P(A) \cap \mathcal T$ and $\mathcal P(B) \cap \mathcal T$. We have
+		$$
+		\begin{aligned}
+			U \subseteq \bigcup (\mathcal P(A \cap \mathcal B) \cap \mathcal T) &\iff U \subseteq \bigcup (\mathcal P(A) \cap \mathcal T) \land U \subseteq \bigcup (\mathcal P(B) \cap \mathcal T) \\
+			&\iff U \subseteq \mathrm{int}(A) \land U \subseteq \mathrm{int}(B) \\
+			&\iff U \subseteq \mathrm{int}(A) \cap \mathrm{int}(B).
+		\end{aligned}
+		$$
+		
+		Thus, $\mathrm{int}(A \cap B) = \mathrm{int}(A) \cap \mathrm{int}(B)$.
+	\end{proof}
+\end{lemma}
+
+
+
 \section{Bases for Topologies}
 %----------------------------------------
 
@@ -105,11 +277,287 @@
 \begin{definition}
 	Let $(X, \mathcal T)$ be a topological space.
 	
-	A collection $\mathcal B \subseteq \mathcal T$ is an \textit{analytic basis} for $\mathcal T$ iff for any $U \in \mathcal T$, there is a $\mathcal S \subseteq \mathcal B$, such that
+	A collection $\mathcal B \subseteq \mathcal T$ is an \textit{analytic basis} for $\mathcal T$ iff for any $U \in \mathcal T$, there is an $\mathcal A \subseteq \mathcal B$, such that
 	$$
-	U = \bigcup \mathcal S.
+	U = \bigcup \mathcal A.
 	$$
 \end{definition}
+
+
+\begin{lemma}
+	Let $(X, \mathcal T)$ be a topological space.
+	
+	A collection $\mathcal B \subseteq \mathcal T$ is an analytic basis for $\mathcal T$ iff for any $U \in \mathcal T$ and for any $x \in U$, there exists a $B \subseteq \mathcal B$, such that
+	$$
+	x \in B \subseteq \mathcal B.
+	$$
+\end{lemma}
+
+
+\begin{proof}
+	Let $\mathcal B$ be an analytic basis for $\mathcal T$.
+	
+	As $\mathcal B$ is a basis for $\mathcal T$, for any $U \in \mathcal T$, there exists a $B' \subseteq \mathcal B$ such that $U = \bigcup \mathcal B'$, which implies that for any $B' \in \mathcal B$, $B' \subseteq U$.
+	
+	$\qedlm$
+	
+	Conversely, let $\mathcal B \subseteq \mathcal T$ satisfies the condition after ``iff".
+	
+	Let $U \in \mathcal T$. For any $x \in U$, let $B_x \in \mathcal B$ with $x \in B_x \subseteq U$.
+	
+	As $\bigcup \{x\}_{x \in U} = U$, and $\{x\} \subseteq B_x$, we have
+	
+	$$
+	U \subseteq \bigcup_{x \in U} B_x.
+	$$
+	
+	As every $B_x \subseteq U$, we have
+	$$
+	\bigcup_{x \in U} B_x \subseteq U.
+	$$
+	Thus,
+	$$
+	U = \bigcup_{x \in U} B_x.
+	$$
+\end{proof}
+
+
+=======
+
+
+\begin{note}
+	Explicitly, 2 can be considered as: for any $B_1, B_2 \in \mathcal B$, and for any $x \in B_1 \cap B_2$, there exists a $B_x \in \mathcal B$, such that
+	$$
+	x \in B_x \subseteq B_1 \cap B_2.
+	$$
+	(Why?)
+\end{note}
+
+
+\begin{note}
+	$\emptyset$ is not necessary be an element of $\mathcal B$.
+\end{note}
+
+
+\begin{lemma}
+	Let $(X, \mathcal T)$ be a topological space, and let $\mathcal B$ be an analytic basis for $\mathcal T$.
+	
+	Then, $\mathcal B$ is a synthetic basis of $X$.
+\end{lemma}
+
+
+\begin{proof}
+	Let $B_1, B_2 \in \mathcal B$.
+
+	As $\mathcal B$ is an analytic basis for $\mathcal T$, $\mathcal B \subseteq \mathcal T$, thus $B_1 \cap B_2 \in \mathcal T$.
+	
+	Thus, there exists an $\mathcal A \subseteq \mathcal B$, such that
+	$$
+	B_1 \cap B_2 = \bigcup \mathcal A.
+	$$
+	
+	This precisely satisfies the definition of synthetic basis.
+\end{proof}
+
+
+\begin{lemma}
+	Let $X$ be any set, and let $\mathcal B$ be a synthetic basis of $X$.
+	
+	Let
+	$$
+	\mathcal T = \left\{ \bigcup \mathcal A : \mathcal A \subseteq \mathcal B  \right\}.
+	$$
+	
+	Then, $\mathcal T$ is a topology for $X$.
+\end{lemma}
+
+
+\begin{proof}
+	As $\mathcal B$ is a synthetic basis of $X$, $X \subseteq \bigcup \mathcal B$. As $\mathcal B \subseteq \mathcal P(X)$, $\bigcup \mathcal B \subseteq X$. Thus, $X = \bigcup \mathcal B \in \mathcal T$.
+	\qedlm
+
+	Let $\mathcal U \subseteq \mathcal T$. For any $U \in \mathcal U$, there exists an $\mathcal A_U \subseteq \mathcal B$, such that $U = \bigcup \mathcal A_U$.
+	
+	We have
+	$$
+	\begin{aligned}
+		\bigcup \mathcal U &= \bigcup \left\{ \bigcup \mathcal A_U \right\}_{U \in \mathcal U} \\
+		&= \bigcup \left( \bigcup \left\{ \mathcal A_U \right\}_{U \in \mathcal U} \right)
+	\end{aligned}
+	$$
+	
+	As for any $U \in \mathcal U$, $\mathcal A_U \subseteq \mathcal B$, thus,
+	$$
+	\mathcal U = \bigcup \left\{ \mathcal A_U \right\}_{U \in \mathcal U} \subseteq \mathcal B.
+	$$
+	
+	Thus, $\bigcup \mathcal U \in \mathcal T$. Therefore, $\mathcal T$ is closed under arbitrary union.
+	\qedlm
+	
+	Let $\mathcal V$ be a finite subset of $\mathcal T$. For any $V \in \mathcal U$, there exists an $\mathcal A_V \subseteq \mathcal B$, such that $U = \mathcal A_V$.
+	
+	We have
+	$$
+	\begin{aligned}
+		\bigcap \mathcal V &= \bigcap \left\{ \bigcup \mathcal A_V \right\}_{V \in \mathcal U} \\
+		&= \bigcap \left( \bigcup \left\{ \mathcal A_V \right\}_{V \in \mathcal U} \right).
+	\end{aligned}
+	$$
+	
+	Similar to what we have proved above,
+	$$
+	\mathcal V = \bigcup \{\mathcal A_V\}_{V \in \mathcal V} \subseteq \mathcal B.
+	$$
+	
+	Thus, $\bigcap \mathcal V \in \mathcal T$. Therefore, $\mathcal T$ is closed under finite intersection.
+\end{proof}
+
+
+\begin{lemma}
+	Let $X$ be any set, and let $\mathcal C$ be a cover of $X$.
+	
+	The collection
+	$$
+	\mathcal B = \left\{ \bigcap \mathcal A: \mathcal A \subseteq \mathcal C \land |\mathcal A| \in \mathbb N \right\}
+	$$
+	is a synthetic basis of $X$.
+\end{lemma}
+
+
+\begin{proof}
+	Let $B_1, B_2 \in \mathcal B$. There exist $\mathcal U, \mathcal V \subseteq \mathcal C$, such that $B_1 = \bigcup \mathcal U$ and $B_2 = \bigcup \mathcal V$. Then, we have
+	$$
+	\begin{aligned}
+		B_1 \cap B_2 &= \bigcup_{U \in \mathcal U} U \cap \bigcup_{V \in \mathcal V} V \\
+		&= \bigcup \{ U \cap V \}_{U \in \mathcal U, V \in \mathcal V}.
+	\end{aligned}
+	$$
+	
+	$\{U, V\} \subseteq \mathcal C$, so $U \cap V \in \mathcal B$. As $U$ and $V$ are arbitrarily taken from $\mathcal U$ and $\mathcal V$ respectively, $\{ U \cap V \}_{U \in \mathcal U, V \in \mathcal V} \subseteq \mathcal B$.
+	
+	Therefore, for any $B_1, B_2 \in \mathcal B$, there exists a finite $\mathcal A \subseteq \mathcal B$, such that $B_1 \cap B_2 = \bigcap \mathcal A$.
+\end{proof}
+
+
+\begin{note}
+	In this note, we say that $\mathcal C$ \textit{generates} $\mathcal B$.
+\end{note}
+
+
+\begin{note}
+	If $\mathcal C$ generates the synthetic basis $\mathcal B$, then $\mathcal B$ is the smallest synthetic basis containing $\mathcal C$. (Why?)
+\end{note}
+
+
+\begin{definition}
+	Let $(X, \mathcal T)$ be a topological space, and let $\mathcal B$ be a synthetic basis of $X$.
+	
+	$\mathcal T$ is \textit{generated by} $\mathcal B$ iff
+	$$
+	\mathcal T = \left\{ \bigcup \mathcal A: \mathcal A \subseteq \mathcal B \right\}.
+	$$
+\end{definition}
+
+
+
+\begin{example}
+	In $\mathbb R^n$, for any $\mathbf x \in \mathbb R^n$, define
+	$$
+	B(\mathbf x, \delta) = \{ \mathbf y \in \mathbb R^n : \| \mathbf x - \mathbf y \| < \delta \land \delta \in \mathbb R_{> 0} \}.
+	$$
+	Let $\mathcal B$ be the set of all such $B(\mathbf x, \delta)$, then, $\mathcal B$ is a synthetic basis of $\mathbb R^n$, and it generates the \textit{Euclidean topology} for $X$.
+\end{example}
+
+
+\begin{example}
+	In $\mathbb R^n$, let $\mathcal I$ be the set of all open intervals. $\mathcal I$ is a synthetic basis of $\mathbb R^n$, and it also generates the Euclidean topology for $\mathbb R^n$.
+\end{example}
+
+
+\begin{example}
+	An \textit{ordered set} $(X, \preceq)$ is a set $X$ together with an \textit{ordering} $\preceq$ defined on $X$. That is, for any $x, y, z \in X$,
+	\begin{enumerate}[(i)]
+		\item
+		(reflexive) $x \preceq x$;
+		
+		\item
+		(transitive) $x \preceq y$ and $y \preceq z$ implies $x \prec z$;
+		
+		\item
+		(antisymmetric) $x \preceq y$ and $y \preceq x$ implies $x = y$.
+	\end{enumerate}
+	
+	$(X, \preceq)$ is an \textit{totally ordered set} iff $\preceq$ is \textit{connected}. That is, for any $x,y \in X$, $x \ne y$ implies $x\prec y$ or $y \prec x$.
+	
+	Now, let $(X, \preceq)$ be a totally ordered set, and let
+	$$
+	\mathcal A = \left\{X_{\prec x} : x \in X \right\} \cup \left\{ X_{\succ x} : x \in X \right\}.
+	$$
+	
+	Let $\mathcal B$ be the synthetic basis generated by $\mathcal A$.
+	
+	Then, $\mathcal B$ generates an \textit{order topology} for $X$.
+	
+	If $\preceq$ is $\le$ on $\mathbb R$, then, the order topology for $\mathbb R$ is exactly the same as its Euclidean topology.
+	
+	Let
+	$$
+	\mathcal X = \left\{ \prod_{i = 1}^n \mathbb R_{< x_i} \right\} \cup \left\{ \prod_{i = 1}^n \mathbb R_{> x_i} \right\},
+	$$
+	let $\mathcal B$ be the synthetic basis for $\mathbb R^n$ generated by $\mathcal X$. Then $\mathcal B$ also generates the Euclidean topology for $\mathbb R^n$
+\end{example}
+
+
+\begin{note}
+	In the example above, if $(X, \preceq)$ is an ordered set, but the connectedness of $\preceq$ is not required, then $\mathcal A$ is not a cover of $X$, and it generates no synthetic basis of $X$.
+\end{note}
+
+
+\begin{example}
+	For any totally ordered set $(X, \preceq)$, the discrete topology for $X$ can be generated by either the collection of all closed intervals in $X$ or the collection of all singletons in $X$.
+\end{example}
+
+
+\begin{example}
+	Let $(X, \preceq)$ be a totally ordered set, and let $C$ be a countable subset of $X$. The set
+	$$
+	\mathcal A = \{ X_{\prec x} : x \in C \}
+	$$
+	is a countable synthetic basis of $X$, and it generates a countable topology for $X$.
+\end{example}
+
+
+\begin{example}
+	Let $X$ be an countably infinite set, and let $\mathcal B$ be the partition of $X$. As $\mathcal B$ is a synthetic basis for $X$, let $\mathcal T$ be the topology generated by $\mathcal B$.
+	
+	Then, $|\mathcal T| = |\mathcal P(\mathcal B)| = 2^{|\mathcal B|}$. Thus,
+	\begin{enumerate}[(i)]
+		\item $\mathcal T$ is finite iff $\mathcal B$ is finite;
+		\item $\mathcal T$ is uncountable iff $\mathcal B$ is infinite (even if $\mathcal B$ is just countably infinite).
+		\item $\mathcal T$ can not be countably infinite.
+	\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
