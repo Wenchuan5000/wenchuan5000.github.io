@@ -113,7 +113,7 @@ $$
 
 ### $p$-Product Metric Spaces
 
-Euclidean metric space is one of $p$-product metric spaces. Let
+Euclidean metric is just one of $p$-product metric. Let
 $$
 X = \prod_{i = 1}^n X_i.
 $$
