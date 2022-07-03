@@ -121,7 +121,7 @@ Then, for any $p \in \mathbb R_{\ge 1}$, the $p$-product metric $\rho_p: \mathbb
 $$
 \rho_p(x, y) = \left( \sum_{i = 1}^n \rho_i^p(x_i, y_i) \right)^\frac{1}{p},
 $$
-where $\rho_i(x_i, y_i)$ can be the Euclidean metric on $X_i$ for any $i \in \{1, \ldots, n\}$, but it is not required. Indeed, $p$-product metric spaces are metric spaces. It is easy to show that $\rho_p$ satisfies the metric axiom 1 and 2. Now, we prove that the $\rho_p$ satisfies the metric axiom 3. That is to show that
+where $\rho_i(x_i, y_i)$ can be the Euclidean metric on $X_i$ for any $i \in \{1, \ldots, n\}$, but it is not required. Indeed, $p$-product metric spaces are metric spaces. It is easy to show that $\rho_p$ satisfies the metric axiom 1 and 2. Now, we prove that the $\rho_p$ satisfies the metric axiom 3. That is to show
 $$
 \left( \sum_{i = 1}^n \rho_i(x_i, z_i)^p \right)^\frac{1}{p} \le \left( \sum_{i = 1}^n \rho_i(x_i, y_i)^p \right)^\frac{1}{p} + \left( \sum_{i = 1}^n \rho_i(y_i, z_i)^p \right)^\frac{1}{p}
 $$
