@@ -1,0 +1,16 @@
+li {
+  margin-left: 1.5em;
+  line-height: 1.5;
+}
+
+ol {
+  li {
+    list-style: decimal;
+  }
+}
+
+ul {
+  li {
+    list-style: disc;
+  }
+}

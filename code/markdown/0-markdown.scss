@@ -1,0 +1,7 @@
+article.markdown-section {
+  font-size: 17px;
+  font-family: var(--font-note);
+
+  @import "basic";
+  @import "list";
+}

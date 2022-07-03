@@ -1,0 +1,18 @@
+aside.sidebar {
+  transition: transform 0.3s;
+}
+
+section.content {
+  transition: margin-left 0.3s;
+}
+
+body.close {
+  aside.sidebar {
+    transform: translate(calc(-1 * var(--sidebar-width) - 24px), 0);
+  }
+
+  section.content {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}

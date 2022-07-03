@@ -1,0 +1,14 @@
+// for test
+:root {
+  --sidebar-width: 280px;
+}
+
+nav.app-nav {
+  display: none;
+}
+
+@import "sidebar";
+
+@import "content";
+
+@import "responsiveness";

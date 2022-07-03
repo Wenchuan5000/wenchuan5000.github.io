@@ -1,3 +1,4 @@
-* [Introduction](README.md)
-  * Topological Space
-    * [Metric Spaces](content/test.md)
+* [Introduction](/)
+* [Topological Space](*)
+  * [Metric Spaces](content/test.md)
+  

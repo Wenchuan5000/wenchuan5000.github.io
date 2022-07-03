@@ -1,0 +1,13 @@
+section.content {
+  // max-width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+
+  .markdown-section {
+    max-width: 900px;
+    padding: 40px;
+    margin: 0 auto;
+
+    margin-top: 120px;
+    margin-bottom: 240px;
+  }
+}
