@@ -2,30 +2,29 @@
 
 ## What is a Metric Space?
 
-How do we measure the distance between two points in a space? Take $\mathbb R^n$ for example, for any points $x, y \in \mathbb R^n$, the distance between $x$ and $y$ is given by
+How do we measure the distance between two points in a space? Take vector space $\mathbb R^3$ for example, for any points $x, y \in \mathbb R^3$, the distance between $x$ and $y$ is usually defined as the length of the segment $xy$, which, by Pythagoras theorem, is given by
 $$
-\rho(x, y) = \left( \sum_{i = 1}^n |x_i - y_i|^2 \right)^\frac{1}{2},
+\rho(x, y) = \left( \sum_{i = 1}^3 |x_i - y_i|^2 \right)^\frac{1}{2},
 $$
-where for any $p \in \mathbb R^n$, $p_i$ denotes the $i$-th component of $p$. Here, we consider $\rho$ as a function from $\mathbb R^n \times \mathbb R^n$ to $\mathbb R$, called **Euclidean metric function** on $\mathbb R^n$. Then, $\rho$ satisfies the following conditions: For any $x$, $y$, and $z \in \mathbb R^n$,
+where for any $p \in \mathbb R^3$, $p_i$ denotes the $i$-th component of $p$. Here, we consider $\rho$ as a function from $\mathbb R^3 \times \mathbb R^3$ to $\mathbb R$, called **Euclidean metric function** on $\mathbb R^3$. Then, $\rho$ satisfies the following conditions: For any $x$, $y$, and $z \in \mathbb R^3$,
 
 1. $\rho(x, y) = 0$ if and only if $x = y$;
 2. $\rho(x, y) = \rho(y, x)$;
-3. $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$; this property is also called **triangle inequality**.
+3. $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$.
 
-In this case, we call the ordered pair $(\mathbb R^n, \rho)$ the **$n$-dimensional Eulidean metric space**.
+In this case, we call the ordered pair $(\mathbb R^3, \rho)$ the **$n$-dimensional Eulidean metric space**.
 
-Just like how the first scientist defined the unite of 1 kilogram, a metric function is not entirely naturally given, but is chosen depend on what distance we need to find. In the example above, the set $\mathbb R^n$ can be replaced by any set $X$, and the metric function $\rho$ can be any operation from $X \times X \to \mathbb R$ satisfying the 4 conditions above. And this is how metric spaces are defined.
+Just like how the first scientist defined the unite of 1 kilogram, a metric function is not entirely naturally given, but is chosen depend on what distance we need to find. In the example above, the set $\mathbb R^3$ can be replaced by any set $X$, and the metric function $\rho$ can be any operation from $X \times X \to \mathbb R$ satisfying the 3 conditions above. And this is how metric spaces are defined.
 
 
 > #### Definition: Metric Spaces
 >
-> Let $X$ be any set. A mapping $\rho: X \times X \to \mathbb R$ is a **metric** on $X$ if and only if it satisfies the **open axioms**. That is, for any $\mathbf x, \mathbf y, \mathbf z \in X$,
+> Let $X$ be any set. A mapping $\rho: X \times X \to \mathbb R$ is a **metric** on $X$, and $(X, \rho)$ is a **metric space**, if and only if it satisfies the **open axioms**. That is, for any $x, y, z \in X$,
 >
 > 1. $\rho(x, y) = 0$ if and only if $x = y$ (**identity**);
 > 2. $\rho(x, y) = \rho(y, x)$ (**symmetry**);
 > 3. $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$ (**triangle inequality**).
 >
-> An ordered pair $(X, \rho)$ is a **metric space** if and only if $\rho$ is a metric on $X$.
 
 
 Some author also consider $\rho(x, y) \ge 0$ as an axiom in the list above, but, rigoroursly, it is a property deduced by the 3 axioms. By triangle inequality, we have
@@ -60,11 +59,11 @@ So, if we are going to prove if an operation is a metric, this is an unnecessary
 
 The “shape” of an open ball is determined by the metric and the set. In the 3-dimentional Euclidean metric space $(\mathbb R^3, \rho)$, for example, an open $\delta$-ball of $x$ is a sphere with $x$ as its center and $\delta$ as its radius. But if $\rho$ is a **taxicap metric** on $\mathbb R^3$, i.e.,
 $$
-\rho(x,y) = |x_1 - y_1| + |x_2 - y_2| + |x_3 - y_3|,
+\rho(x,y) = \sum_{i = 1}^3 |x_i - y_i|,
 $$
 then, an open $\delta$-ball of $x$ is no longer a sphere, but a box with $x$ as its center and $2\delta$ as the length of it edges.
 
-If $<$ is replaced by $\le$ in the definition, then we have the definition blew.
+If $<$ is replaced by $\le$ in the definition above, then we have the definition blew.
 
 > #### Definition: Closed Balls
 >
@@ -79,7 +78,7 @@ Note that, in the both definitions above, we have the condition $y \in X$. This 
 $$
 X = [0 , 1] \times [0,1],
 $$
-and let $\rho$ be an Euclidean metric on $X$. In this case, $B(0,1)$ is not a disk, but disk sector.
+and let $\rho$ be an Euclidean metric on $X$. In this case, $B(0,1)$, or $\overline B(0,1)$, is not a disk, but disk sector.
 
 ## Some Examples on Metric Spaces
 

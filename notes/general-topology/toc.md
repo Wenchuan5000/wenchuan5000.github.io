@@ -1,4 +1,4 @@
 * [Introduction](/)
-* [Topological Space](*)
-  * [Metric Spaces](content/test.md)
-  
+* [Topological Spaces](*)
+  * [Metric Spaces](content/metric-spaces.md)
+  * [Topologies and Topological Spaces](content/topologies.md)

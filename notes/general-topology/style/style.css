@@ -238,3 +238,7 @@ article.markdown-section {
     list-style: decimal; }
   article.markdown-section ul li {
     list-style: disc; }
+  article.markdown-section b, article.markdown-section strong {
+    font-weight: bold; }
+  article.markdown-section em {
+    font-style: italic; }
