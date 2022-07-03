@@ -81,7 +81,7 @@ In this case, we say that $\mathcal T$ is **generated** by $\mathcal B$. But, no
 
 For example, consider the Euclidean metric space $(\mathbb R^n, \rho)$. Let $\mathcal O$ be the set of all open balls in the space, i.e.,
 $$
-\mathcal O = \{B(x, \delta): x \in \mathbb R^n \land \delta \in \mathbb R_{> 0}\}.
+\mathcal O = \{B(x, \delta): x \in \mathbb R^n \land \delta \in \mathbb R_{> 0}\},
 $$
 then $\mathcal O$ generates the **Euclidean topology** $\mathcal T$ for $\mathbb R^n$. In this case, we also say that $\mathcal T$ is **induced** from the metric $\rho$. In the mean time, let $\mathcal I$ be the set of all open intervals in $\mathbb R^n$, then it generates the same topology $\mathcal T$ for $\mathbb R^n$. (Why?) Or, let $\mathcal J$ be the set of all open intervals $(a,b)$ in $\mathbb R^n$, where for any $i \in \{1, \ldots, n\}$, $a_i, b_i \in \mathbb Q$, $\mathcal J$ still generates the same topology $\mathcal T$ (Why?). Also, let $\mathcal K$ be the set of all open intervals $(a,b)$ in $\mathbb R^n$ with for any $j \in \{2, \ldots, n\}$,
 $$
