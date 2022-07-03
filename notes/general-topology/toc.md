@@ -2,3 +2,4 @@
 * [Topological Spaces](*)
   * [Metric Spaces](content/metric-spaces.md)
   * [Topologies and Topological Spaces](content/topologies.md)
+  * [Interiors and Closures](content/interiors.md)

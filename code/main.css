@@ -226,11 +226,15 @@ article.markdown-section {
     padding: 16px 24px;
     background: #fafafa;
     border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
     margin: 24px 0; }
     article.markdown-section blockquote *:first-child {
       margin-top: 0; }
     article.markdown-section blockquote *:last-child {
       margin-bottom: 0; }
+    article.markdown-section blockquote h4 {
+      padding-bottom: 4px;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.08); }
   article.markdown-section li {
     margin-left: 1.5em;
     line-height: 1.5; }
