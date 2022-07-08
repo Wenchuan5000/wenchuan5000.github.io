@@ -5,4 +5,18 @@ article.markdown-section {
   @import "basic";
   @import "list";
   @import "inline";
+
+  h1, h2, h3, h4, h5, h6 {
+    a[href*='\?id\='] {
+      pointer-events: none;
+    }
+  }
+
+
+  p, li {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
 }

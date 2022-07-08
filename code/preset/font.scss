@@ -1,6 +1,7 @@
 :root {
   --font-note: 'Times New Roman', Times, serif;
-  --font-standard: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --font-note: 'Inter', -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --font-standard: 'Inter', -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
 
 html {
@@ -11,5 +12,7 @@ html {
 
 .katex {
   font-size: inherit !important;
-  // font-size: 1.1em !important;
+
+  // 如果 note 字体是 Inter 的话，需要调整一下 KaTeX 的大小
+  font-size: 1.125em !important;
 }

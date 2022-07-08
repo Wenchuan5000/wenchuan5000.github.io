@@ -89,7 +89,7 @@ b_j - a_j = r(a_{j-1} - b_{j-1}),
 $$
 where $r \in \mathbb R_{> 0}$. Then, $\mathcal K$ also is a basis of $X$, and generates the same topology $\mathcal T$. So, there are infinitely many basis $\mathcal B$ by which the Euclidean topology $\mathcal T$ can be considered as a topology generated.
 
-The alternative definition above also reveals the reason why a topology is not necessarily closed under infinite intersection. In the Euclidean topological space $(\mathbb R, \mathcal T)$, any open intervals is open, so $\left\{(-n^{-1}, n^{-1})\right\}_{n \in \mathbb Z_{> 0}}$ is a subset of $\mathcal T$. But, its intersection is a singleton, $\{0\}$, which is not open in the space.
+The alternative definition above also reveals the reason why a topology is not necessarily closed under infinite intersection. In the Euclidean topological space $(\mathbb R, \mathcal T)$, any open intervals is open, so $\left\{(-n^{-1} \ldots n^{-1})\right\}_{n \in \mathbb Z_{> 0}}$ is a subset of $\mathcal T$. But, its intersection is a singleton, $\{0\}$, which is not open in the space.
 
 ## Comparison of Topologies
 
