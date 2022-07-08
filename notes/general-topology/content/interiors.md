@@ -75,7 +75,7 @@ as an alternative definition of closures.
 
 ## Some Proposition on Interiors and Closures
 
-> #### Lemma: The Union of the Interiors of Sets Is a Subset of the Interior of the Union of These Sets
+> #### Lemma: The Union of Interiors Is a Subset of the Interior of the Union
 >
 > Let $(X, \mathcal T)$ be a topological space, let $\mathcal S \subseteq \mathcal T$. Then, we have
 > $$
@@ -108,8 +108,19 @@ Note that, the $=$ relation does not need to hold in this proposition. For examp
 $$
 \emptyset = \bigcup_{x \in \mathbb R} \mathrm{int}(\{x\}) \subsetneq \mathrm{int} \left( \bigcup_{x \in \mathbb R} \{x\} \right) = \mathbb R.
 $$
+By De Morgan’s law and the definition of closures,
+$$
+\begin{aligned}
+& X \setminus \bigcup_{S \in \mathcal S} \mathrm{int}(S) \supseteq X \setminus \mathrm{int} \left( \bigcup \mathcal S \right) \\
+\iff & \bigcap_{S \in \mathcal S} \mathrm{cl}\left(S^\complement \right) \supseteq \mathrm{cl} \left( \bigcap_{S \in \mathcal S} S^\complement \right).
+\end{aligned}
+$$
+So, we have the straight corollary that the closure of the intersection of sets is a subset of the intersection of the interiors of the sets. That is, for any $\mathcal C$ be a collection of closed sets in $(X, \mathcal T)$,
+$$
+\mathrm{cl} \left( \bigcap \mathcal C \right) \subseteq \bigcap_{C \in \mathcal C} \mathrm{cl}(C).
+$$
 
-> #### Lemma: The Finite Intersection of the Interiors of Sets Equals the Interior of the Finite Intersection of These Sets
+> #### Lemma: The Finite Intersection of Interiors Equals the Interior of the Finite Intersection
 >
 > Let $(X, \mathcal T)$ be a topological space, let $\mathcal F$ be a finite subset of $\mathcal T$. Then, we have
 > $$
@@ -140,8 +151,19 @@ $$
 $$
 $\blacksquare$
 
-## Other Set-Classes Deduced by Interiors and Closures
+By De Morgan’s law and the definition of closures,
+$$
+\begin{aligned}
+& X \setminus \bigcap_{F \in \mathcal F} \mathrm{int}(F) = X \setminus \mathrm{int} \left( \bigcap \mathcal F \right) \\
+\iff & \bigcup_{F \in \mathcal F} \mathrm{cl}\left(F^\complement \right) = \mathrm{cl} \left( \bigcup_{F \in \mathcal F} F^\complement \right).
+\end{aligned}
+$$
+So, we have the corollary that the finite union of closures equals the closures of the finite union. That is, for any finite collection $\mathcal V$ of closed sets in $(X, \mathcal T)$,
+$$
+\bigcup_{V \in \mathcal V} \mathrm{cl}(V) = \mathrm{cl} \left( \bigcup \mathcal V \right).
+$$
+
+## Boundaries
 
 > #### Definition: Boundaries
 
-> #### Definition: Exteriors
