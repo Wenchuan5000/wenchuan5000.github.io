@@ -162,8 +162,3 @@ So, we have the corollary that the finite union of closures equals the closures 
 $$
 \bigcup_{V \in \mathcal V} \mathrm{cl}(V) = \mathrm{cl} \left( \bigcup \mathcal V \right).
 $$
-
-## Boundaries
-
-> #### Definition: Boundaries
-
