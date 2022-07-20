@@ -14,20 +14,6 @@ Let $X$ be any set. A collection $\mathcal T$ of subsets of $X$ is a **topology*
 
 In this case, the ordered pair $(X, \mathcal T)$ is a **topological space**, and we call $\mathcal T$-sets as **open sets** in $(X, \mathcal T)$, or **open subsets** of $X$ (with respect to the topology $\mathcal T$).
 
-### Examples of Topological Space
-
-#### Discrete Topological Spaces
-
-Let $X$ be any set. The power set of $X$, i.e., $\mathcal P(X)$, is the **discrete topology** for $X$.
-
-#### Indiscrete Topological Spaces
-
-Let $X$ be any set. The collection $\{\emptyset, X\}$ is the **indiscrete topology** or **trivial topology** for $X$.
-
-
-
-
-
 
 ## Alternative Definition of Topology via Bases
 
@@ -115,6 +101,17 @@ All [[metric-spaces#p -Produced Metrics|$p$-produced metrics]] induce the same t
 
 
 ### Examples of Different Bases Generates The Same Topology
+
+## Examples of Topological Space
+
+### Discrete Topological Spaces
+
+Let $X$ be any set. The power set of $X$, i.e., $\mathcal P(X)$, is the **discrete topology** for $X$.
+
+### Indiscrete Topological Spaces
+
+Let $X$ be any set. The collection $\{\emptyset, X\}$ is the **indiscrete topology** or **trivial topology** for $X$.
+
 
 ## Closed Sets
 
