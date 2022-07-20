@@ -2,8 +2,6 @@
 
 A **topological space** is a mathematical structure $(X, \mathcal T)$ which is a set $X$, whose elements are considered as points, together with a collection $\mathcal T$ of some subsets of $X$ satisfying some axioms with which $\mathcal T$ is a **topology** of $X$.
 
-[[../_sidebar|ssss]]
-
 ## Definition via Open Sets
 
 Let $X$ be any set. A collection $\mathcal T$ of subsets of $X$ is a **topology** for $X$ if and only if it satisfies **Open Set Axioms**:
@@ -82,9 +80,13 @@ $\blacksquare$
 
 By the definition of topologies via bases, it is a straight consiquence that [[metric-spaces#Metric Spaces|metric space]] are topological spaces, which, rigoursly, actually means that, for any metric space $(X, \rho)$, if $\mathcal O$ denotes the set of all [[metric-spaces#Open Balls|open balls]] in $(X, \rho)$, then $\mathcal O$ generates a topology $\mathcal T$ for $X$, in which case $\mathcal T$ is a topology **induced** from the metric $\rho$. It is prove as follow.
 
-**Proof.** Clearly, $\bigcup \mathcal O = X$. Let $x,y \in X$, and let $\delta_x$ and $\delta_y$ be possitive real numbers. Let $z \in B(x, \delta_x) \cap B(y, \delta_y)$. (The following proof is vacuously true if $B(x, \delta_x) \cap B(y, \delta_y)$ is empty.)
+**Proof.** Clearly, $\bigcup \mathcal O = X$.
 
-There exists a $\delta_1, \delta_2 \in \mathbb R_{>0}$, such that $B(z, \delta_1) \subseteq B(x, \delta_x)$, and $B(z, \delta_2) \subseteq B(y, \delta_y)$. (See [[metric-spaces#Open Ball of Point Inside Open Ball|this]].) Let $\delta = \min\{\delta_1, \delta_2\}$, then $B(z, \delta) \subseteq B(z, \delta_1)$ and $B(z, \delta) \subseteq B(z, \delta_2)$. Thus, $B(z, \delta) \subseteq B(x, \delta_x)$, and $B(y, \delta_y)$, so $B(z, \delta) \subseteq B(x, \delta_x) \cap B(y, \delta_y)$.
+Let $x,y \in X$, and let $\delta_x$ and $\delta_y$ be possitive real numbers. Let $z \in B(x, \delta_x) \cap B(y, \delta_y)$. (The following proof is vacuously true if $B(x, \delta_x) \cap B(y, \delta_y)$ is empty.)
+
+There exists a $\delta_1, \delta_2 \in \mathbb R_{>0}$, such that $B(z, \delta_1) \subseteq B(x, \delta_x)$, and $B(z, \delta_2) \subseteq B(y, \delta_y)$. (See [[metric-spaces#Open Ball of Point Inside Open Ball|this]].)
+
+Let $\delta = \min\{\delta_1, \delta_2\}$, then $B(z, \delta) \subseteq B(z, \delta_1)$ and $B(z, \delta) \subseteq B(z, \delta_2)$. Thus, $B(z, \delta) \subseteq B(x, \delta_x)$, and $B(y, \delta_y)$, so $B(z, \delta) \subseteq B(x, \delta_x) \cap B(y, \delta_y)$.
 
 Thus, for any $x,y \in X$, for any $\delta_x$ and $\delta_y$, and for any $z \in B(x, \delta_x) \cap B(y, \delta_y)$, there exists $\delta_z \in \mathbb R_{> 0}$, such that
 

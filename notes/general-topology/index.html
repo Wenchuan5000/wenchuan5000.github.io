@@ -16,13 +16,17 @@
       homepage: "README.md",
       name: 'Notes on General Topology',
       repo: '',
-      loadSidebar: true,
-      loadNavbar: true,
+      loadSidebar: "_sidebar.md",
+      // loadNavbar: true,
       alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-        '/.*/_navbar.md': '/_navbar.md',
+        '/.*/_sidebar.md': '_sidebar.md',
+        // '/.*/_navbar.md': '_navbar.md',
       },
-      auto2top: true,
+      // auto2top: true,
+
+      subMaxLevel: 3,
+
+      sidebarDisplayLevel: 1, // set sidebar display level
     }
   </script>
   <!-- Docsify v4 -->
@@ -34,6 +38,8 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css">
 
   <script src="https://cdn.jsdelivr.net/npm/docsify-wikilink@1"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
 </body>
 </html>
