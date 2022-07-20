@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_sidebar.md",
+            "file": "README.md",
             "mode": "source",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_sidebar.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,11 +103,11 @@
   },
   "active": "6332b2f4b5486faf",
   "lastOpenFiles": [
+    "_sidebar.md",
     "content/topological-spaces.md",
     "content/metric-spaces.md",
     "README.md",
     "_navbar.md",
-    "_sidebar.md",
     "Untitled.md",
     "*.md",
     "content/Bases of Sets.md",
