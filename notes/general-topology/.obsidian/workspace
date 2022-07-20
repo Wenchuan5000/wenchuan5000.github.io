@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_sidebar.md",
+            "file": "content/metric-spaces.md",
             "mode": "source",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_sidebar.md",
+                "file": "content/metric-spaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,17 +101,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "fd5e822c1405f37a",
+  "active": "6332b2f4b5486faf",
   "lastOpenFiles": [
+    "_navbar.md",
+    "_sidebar.md",
+    "README.md",
     "content/topological-spaces.md",
     "content/metric-spaces.md",
     "Untitled.md",
-    "_sidebar.md",
-    "_navbar.md",
     "*.md",
     "content/Bases of Sets.md",
     "content/boundaries.md",
-    "content/interiors.md",
-    "limit-point.md"
+    "content/interiors.md"
   ]
 }
