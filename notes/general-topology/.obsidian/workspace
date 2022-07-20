@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/metric-spaces.md",
+            "file": "README.md",
             "mode": "source",
             "source": false
           }
@@ -101,17 +101,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6332b2f4b5486faf",
+  "active": "30d8f22cd5f5c93a",
   "lastOpenFiles": [
-    "_sidebar.md",
-    "content/topological-spaces.md",
-    "README.md",
     "content/metric-spaces.md",
+    "content/topological-spaces.md",
+    "_toc.md",
     "_navbar.md",
+    "README.md",
+    "_sidebar.md",
     "Untitled.md",
     "*.md",
     "content/Bases of Sets.md",
-    "content/boundaries.md",
-    "content/interiors.md"
+    "content/boundaries.md"
   ]
 }

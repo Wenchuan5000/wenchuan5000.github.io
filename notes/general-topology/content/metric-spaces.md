@@ -9,6 +9,6 @@
 
 ## Open Ball of Point Inside Open Ball
 
-## $p$-Produced Metrics
+## P-Produced Metrics
 
 ## Discrete Metrics
