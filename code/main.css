@@ -218,6 +218,12 @@ article.markdown-section {
     font-weight: bold;
     margin-top: 1.5em;
     margin-bottom: 1em; }
+  article.markdown-section h5 {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 1em; }
   article.markdown-section p {
     line-height: 1.5;
     margin: 8px 0; }
@@ -234,6 +240,10 @@ article.markdown-section {
     article.markdown-section blockquote h4 {
       padding-bottom: 4px;
       border-bottom: 1px dashed rgba(0, 0, 0, 0.08); }
+  article.markdown-section p a {
+    text-decoration: underline; }
+    article.markdown-section p a:hover {
+      opacity: 0.8; }
   article.markdown-section li {
     margin-left: 1.5em;
     line-height: 1.5; }
@@ -247,11 +257,6 @@ article.markdown-section {
     font-style: italic; }
   article.markdown-section h1 a[href*='\?id\='], article.markdown-section h2 a[href*='\?id\='], article.markdown-section h3 a[href*='\?id\='], article.markdown-section h4 a[href*='\?id\='], article.markdown-section h5 a[href*='\?id\='], article.markdown-section h6 a[href*='\?id\='] {
     pointer-events: none; }
-  article.markdown-section p, article.markdown-section li {
-    text-align: justify;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto; }
 
 [href="#\/\*"] {
   pointer-events: none; }

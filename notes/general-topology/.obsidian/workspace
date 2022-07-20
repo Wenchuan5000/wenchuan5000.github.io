@@ -1,0 +1,117 @@
+{
+  "main": {
+    "id": "73565d958bf2db1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "30d8f22cd5f5c93a",
+        "type": "leaf",
+        "dimension": 32.15277777777778,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "content/Metric Spaces.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "d795c60a25e68c5b",
+        "type": "leaf",
+        "dimension": 67.84722222222223,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "content/Topological Spaces.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b59ab02b1d2ef3c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "4dd10996e141dcab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd5e822c1405f37a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "f2d791b7bbef4be9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cb8965e5e4bedd21",
+    "type": "split",
+    "children": [
+      {
+        "id": "9298497570eb0a14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3350c50822408820",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/Topological Spaces.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d795c60a25e68c5b",
+  "lastOpenFiles": [
+    "content/Metric Spaces.md",
+    "content/Topological Spaces.md",
+    "_sidebar.md",
+    "*.md",
+    "content/Bases of Sets.md",
+    "_navbar.md",
+    "content/boundaries.md",
+    "content/metric-spaces.md",
+    "content/interiors.md",
+    "limit-point.md"
+  ]
+}
