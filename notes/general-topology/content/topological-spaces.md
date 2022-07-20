@@ -16,7 +16,13 @@ In this case, the ordered pair $(X, \mathcal T)$ is a **topological space**, and
 
 ### Examples of Topological Space
 
+#### Discrete Topological Spaces
 
+Let $X$ be any set. The power set of $X$, i.e., $\mathcal P(X)$, is the **discrete topology** for $X$.
+
+#### Indiscrete Topological Spaces
+
+Let $X$ be any set. The collection $\{\emptyset, X\}$ is the **indiscrete topology** or **trivial topology** for $X$.
 
 
 

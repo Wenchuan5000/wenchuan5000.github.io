@@ -6,7 +6,7 @@
       {
         "id": "30d8f22cd5f5c93a",
         "type": "leaf",
-        "dimension": 32.15277777777778,
+        "dimension": 33.263888888888886,
         "state": {
           "type": "markdown",
           "state": {
@@ -17,13 +17,13 @@
         }
       },
       {
-        "id": "d795c60a25e68c5b",
+        "id": "6332b2f4b5486faf",
         "type": "leaf",
-        "dimension": 67.84722222222223,
+        "dimension": 66.73611111111111,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/metric-spaces.md",
+            "file": "_sidebar.md",
             "mode": "source",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/metric-spaces.md",
+                "file": "_sidebar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,16 +101,16 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d795c60a25e68c5b",
+  "active": "fd5e822c1405f37a",
   "lastOpenFiles": [
     "content/topological-spaces.md",
     "content/metric-spaces.md",
+    "Untitled.md",
     "_sidebar.md",
+    "_navbar.md",
     "*.md",
     "content/Bases of Sets.md",
-    "_navbar.md",
     "content/boundaries.md",
-    "content/metric-spaces.md",
     "content/interiors.md",
     "limit-point.md"
   ]
