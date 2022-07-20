@@ -2,6 +2,8 @@
 
 A **topological space** is a mathematical structure $(X, \mathcal T)$ which is a set $X$, whose elements are considered as points, together with a collection $\mathcal T$ of some subsets of $X$ satisfying some axioms with which $\mathcal T$ is a **topology** of $X$.
 
+[[../_sidebar|ssss]]
+
 ## Definition via Open Sets
 
 Let $X$ be any set. A collection $\mathcal T$ of subsets of $X$ is a **topology** for $X$ if and only if it satisfies **Open Set Axioms**:
