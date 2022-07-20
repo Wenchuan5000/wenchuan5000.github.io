@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/Metric Spaces.md",
+            "file": "content/metric-spaces.md",
             "mode": "source",
             "source": false
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/Topological Spaces.md",
+            "file": "content/metric-spaces.md",
             "mode": "source",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/Topological Spaces.md",
+                "file": "content/metric-spaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,8 +103,8 @@
   },
   "active": "d795c60a25e68c5b",
   "lastOpenFiles": [
-    "content/Metric Spaces.md",
-    "content/Topological Spaces.md",
+    "content/topological-spaces.md",
+    "content/metric-spaces.md",
     "_sidebar.md",
     "*.md",
     "content/Bases of Sets.md",
